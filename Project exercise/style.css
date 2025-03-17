@@ -1,0 +1,353 @@
+/*【CSS 注释语言】  ---   Ctrl+/ ：快速打出注释符号*/
+h3 {
+    color:red;     
+}
+
+ol { 
+    color:rgb(157, 0, 255);
+    font-size:36px;
+}
+
+*{
+    padding:0; 
+    margin:0;  
+   
+   }
+
+/*给整行内容块添加背景色*/
+header, section, footer {
+
+    background-color: blueviolet; 
+    border:5px salmon solid;     /* border: 边框粗细 颜色 线条样式  */
+
+    padding:30px 0 20px 50px ;   /*padding: 内边距-上 右 下 左 设定边距*/
+
+}
+    /*
+        也适用 margin 外边距
+    */
+
+
+/*【设置 头部logo,顶部导航区块 样式】 */
+header {
+    background-color: #231C1A;
+    height: 80px;    /*设置header元素高度为 80 像素*/
+    width: 100%;     /*设置header元素宽度占满屏幕*/
+    /*
+    position:relative; /* 定位元素位置：relative相对-左右上下调整，从子元素原来位置为原点计算；absolute绝对-从版面(父元素)左上角为原点计算
+    left:50px;
+    top:100px;
+    */
+
+}
+
+h1 {
+    color:aquamarine;
+}
+
+header h1{
+    /* 调整文字元素位置 */
+    position: absolute;
+        left: 120px;   /* 把header里ul标签内容元素文本，做左边移动到了右边*/
+        top:30px;      /* 距离顶部 0 像素，紧贴顶部 */
+        line-height:80px;  /* 垂直居中文本，调整元素距离顶部行高*/
+        
+     /* 引用logo的svg图片 */ 
+    background-image:url(images/logo狗.svg); /*【注意】本案例中logo尺寸太大，导致显示不全*/
+    background-repeat: no-repeat;  /* 只显示一张图片 */
+    background-position: center;  /*位置上下居中*/
+    background-size: contain;   /* 按比例缩放logo图片完整显示在容器内 */
+    width: 210px;
+
+    text-indent: -9999px;   /*把logo文字推到很远的距离*/
+}
+
+header ul{
+    position: absolute;
+        right:5vw;   /* 把header里ul标签内容元素文本，做左边移动到了右边*/
+        top:0;      /* 距离顶部 0 像素，紧贴顶部 */
+        line-height:80px;  /* 垂直居中文本，调整元素距离顶部行高*/
+}
+
+
+/*把<ol> 标签块元素，转为行内元素, 把原本竖向的清单内容，转为横向*/
+header li {
+    display:inline;
+    margin: right 4vw;  /*4vw：代表视窗宽度的4% 【相对单位，适合不同装置时的自适应】*/
+}
+
+
+/*header 里面的所有 a 标签*/
+header a {
+    color: white;
+    text-decoration: none;   /*text-decoration: 将链接原来显示的“底线,下标线”默认隐藏；*/
+}
+
+
+/*光标移入链接元素悬浮，显示“下标线”*/
+header a:hover {
+    text-decoration: underline;
+}
+
+
+.history{
+    background-color: rgb(76, 43, 226);
+    color:aliceblue;
+    height:95vh;  /* 区块高度 */
+    background-image:url("images/星空2.png");
+    background-repeat: no-repeat;
+    background-size:cover ;      /* size: auto 维持图片原大小，contain 使图片符合容器宽度和高度，cover 图片会覆盖整个容器 */
+    background-position:center;  /*位置上下居中*/
+
+
+/* 【排版】 Flexbox 弹性盒子 */
+
+    /*
+    在 html 中 加入 dispay:flex ，可以让子元素产生各种排列方式
+    
+    justify-content:center;
+        center，水平居中
+        space-between，父元素两侧
+        space-evenly，水平均匀分布
+    align-items: center;  垂直居中
+
+    */
+    display:flex; /* 原本两行内容，此时分布在一行*/
+    flex-direction: column;  /* 保持内容为 纵向排列 */
+    align-items:center;   /* 垂直居中 */
+    justify-content: center;  /* 将flex项目居中对齐 */
+
+}
+
+/* 对一个标签内的某个"标签元素"进行设置CSS时的格式 */
+.history blockquote {
+
+        font-size: 60px;  /* 设置字体大小 */
+}
+
+.history p {
+    font-size:18px;
+    margin:25px 0;  /* 增加上下的外边距  */
+}
+
+.history a {
+    color:white;
+    text-decoration:none; /* 去掉链接底线 */
+    border: 1px solid #ACACAC;  /* 文字元素外加一个实线内边框 并设置线宽 线条实线 线颜色 */
+
+    padding:10px 20px;  /* 内边距填充设置，"边框与文本元素边缘之间的空间距" */
+    border-radius: 5px;   /* 元素外边框，框角 设置为 "圆边角" */
+
+
+}
+
+.shop {
+    display:flex; /* 原本两行内容，此时分布在一行*/
+    align-items:center;   /* 垂直居中 */
+    justify-content: space-evenly;  /* 将flex项目居中对齐 */
+
+}
+
+.shop img {
+
+        width: 50%;  /* 图片宽度设置为其父容器（.shop）宽度的50% */
+}
+
+.info {
+
+    width:50%;
+
+    display:flex; /* 原本两行内容，此时分布在一行*/
+    flex-direction: column;  /* 保持内容为 纵向排列 */
+    align-items:center;   /* 垂直居中 */
+    justify-content: center;  /* 将flex项目居中对齐 */ 
+}
+
+.info blockquote {
+
+    font-size: 40px;
+    margin-bottom: 30px;  /* 给引用块底部添加30像素的外边距 调整元素下方间距 */
+}
+
+.info p {
+
+    text-align: center; /* 设置对齐 段落内的文字会在水平方向居中显示 */
+    line-height: 2em;  /* 设置文本内容的"行距" */
+}
+
+.product {
+    display: flex;
+    background-color: aliceblue;
+    justify-content:space-between;  /* 内部标签元素水平均匀分布 */
+    padding: 100px 180px 80px;
+    /*  
+    第一个值100px：上边距（top），顶部留出100像素空白
+    第二个值180px：右边距（right），左右两侧各留出180像素空白
+    第三个值80px：下边距（bottom），底部留出80像素空白
+    */
+}
+
+.product div {
+    width: 300px;
+    text-align:center;  /* 区块内 元素全部垂直居中 */
+}
+
+.product img {
+        width:100%;   /* 图片宽度设置为其父容器（.product）宽度的100% : 图片会自动调整，填满 "product" 类的容器宽度，确保图片不会超出其父容器*/
+        border-radius:10px;  /* 设置圆角边界 */
+
+    }
+
+.porduct h3 {
+
+    font-size:20px;
+    margin: 20px 0;
+}
+
+.product p {
+
+    font-size:14px;
+    line-height:1.6em;
+    /*
+    设置行高为1.6倍的字体大小
+    em是一个相对单位，基于当前元素的字体大小
+    行高1.6意味着：
+    如果字体是14px
+    实际行高会是 14px × 1.6 = 22.4px
+    */
+}
+
+.newsletter {
+
+    background-color: aliceblue;
+    color:white;
+    padding:60px 0;
+
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.newsletter p {
+    color:#231C1A;
+    margin-bottom:20px;
+}
+
+.newsletter input, .newsletter button {
+    background-color: transparent;
+    color:#231C1A;
+    border:1px solid #949d9a;
+    padding:10px;
+    border-radius: 5px;
+
+}
+
+.newsletter button {
+
+    width: 80px;  /*设置按钮宽度为80像素*/
+    cursor: pointer;  /* 当鼠标悬停在按钮上时，光标会变成手型图标 */
+}
+
+input:focus {
+
+    outline: none;  /* 鼠标点击输入框后，原本默认显示的黑框线条，变为不显示 */
+    border-color:rgb(240, 20, 178);  /* 设置鼠标点击"输入框"后，外框显示什么颜色 */
+}
+
+
+.menu {
+
+    display:none;  /* 再下方【媒体查询语法】未生效状态时，将下拉菜单按钮先隐藏起来 */
+}
+
+
+
+/* 【媒体查询语法】 */
+
+    /*可以在不同屏幕尺寸下，套用不同的CSS规则--响应式设计
+    
+    max-width: 768px：
+        当屏幕宽度小于等于768px时（通常是平板或手机尺寸）
+        大括号内的CSS样式将会生效
+    */
+@media screen and (max-width: 768px) {
+
+
+    header ul {
+        display: none;  /*隐藏 header 中的导航菜单*/
+
+    }
+
+    header h1 {
+
+        left: 50%;                /* 左边界定位到父容器中点*/
+        transform: translateX(-50%); /* 向左回退自身宽度的50%实现居中 */
+        top: 30px;                /* 保持原有顶部距离 */
+        width: 160px;             /* 建议适当缩小移动端 logo 容器宽度（可选） */
+
+    }
+
+    .news h2 {
+
+        font-size:40px;
+    }
+
+    /* 响应式下，下拉菜单CSS样式 */
+    .menu {
+        display: block;  /* 在更换设备达到"媒体查询语法"生效时，将“下拉菜单”显示 */
+        background-color: transparent;
+        color: white;
+        font-size: 35px;
+        position:absolute;
+        top:15px;
+        left:20px;
+        boder:none;
+        cursor:pointer;
+    }
+
+.shop img {
+    width:100%;
+}
+
+.info {
+    width:100%
+    padding:40px 0;
+}
+
+.info h2 {
+    font-size:30px;
+}
+
+.product {
+    flex-direction: column;
+    padding:60px 0; /*调整内边距数值*/
+
+    align-items: center; /* 水平居中（交叉轴方向） */
+    justify-content: center; /* 垂直居中（主轴方向） */
+    text-align: center; /* 文字内容居中 */
+}
+.product div {
+
+    margin-bottom: 30px;
+    margin-bottom: 30px;
+
+}
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
