@@ -1,0 +1,225 @@
+<!DOCTYPE html>   <!-- 声明文件类型 【注释格式】-->
+
+<html lang="en">    <!--开始标签 + 声明语言-->
+
+<head>  <!--content头部, 里面的编码不会显示在网页中-->
+
+    <meta charset="UTF-8">   <!--声明字符编码类型 -->
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!--响应式网页的meta标签，主要用于移动设备适配-->
+        <!-- width=device-width：页面宽度= 设备屏幕宽度-->
+        <!-- initial-scale=1.0：初始缩放比例为100%-->
+
+    <title>Fred_exercise2</title>  <!-- 网页 title 标题-->
+
+    <!--【2、全局定义一个页面的 "某个标签类型" 】的颜色-->       <!--对所有有“h1标签”的元素，定义颜色为 red -->  
+    <style>     
+        h1 {
+                color:red;   
+        }
+
+        p { color:aqua; }
+
+    </style>  
+
+    <!--调用 样式表文件代码-->
+    <link rel="stylesheet" href="style.css">
+        <!-- 
+            rel="stylesheet" 属性：指定链接资源的关系类型,在这里表示链接的是一个样式表文件
+            href="style.css" 属性：指定样式表文件的路径 
+        -->
+
+</head> 
+
+<body>   <!-- 网页上显示的元素,都放在 body 里  -->
+
+
+<!--包含网站的logo，首页相关资讯元素-->
+    <header>
+
+    <!-- 下拉菜单 -->
+        <button class="menu">&#9776;</button>
+        
+        <h1> 摩卡罗盘 </h1>
+        <ul> <!-- 内容前会有 圆点编号 + 加入跳转链接-->
+            <li><a href="#">Logo</a> </li>
+            <li><a href="#">首页</a></li>
+            <li><a href="#">关于我们-</a></li>
+        </ul>
+
+    </header>  
+
+
+    <h1> 内容标题1</h1>  <!-- 区块元素：独占一行 -->
+    <h2> 内容标题2</h2>
+    <p> 我是内容正文 </p>
+
+    <p> <strong>我是行内元素 哈哈哈 把我加粗</strong> </p> <!-- 字符加粗样式-->
+    <p> <em> 我是行内元素2，斜杠样式 </em> </p>   <!-- 字符倾斜样式-->
+
+
+<!--给文字添加链接样式-->
+    <p><a href="https://www.baidu.com"> Click了解更多</a></p>   <!-- href:用来添加一个网址, tips: 网址必须包含https -->
+
+
+<!--网页中建立一个清单列表-->
+
+    <ol>  <!-- 1、先建立一个清单列表，内容前会有数字编号-->
+        <li>清单内容一</li>  <!-- 清单内容，但更像是内容缩进，-->
+        <li>清单内容二</li> 
+        <li>清单内容三</li> 
+    </ol>
+    
+    <ul> <!-- 内容前会有 圆点编号-->
+        <li> 清单类型二，内容一</li>
+        <li> 清单类型二，内容二</li>
+    </ul>
+
+    <ul> <!-- 内容前会有 圆点编号 + 加入跳转链接-->
+        <li><a href="#">首页</a> </li>
+        <li><a href="#">关于我们</a></li>
+    </ul>
+
+    <blockquote cite ="https://www.baidu.com">"成为网页设计师的第一步<br>快速上手 HTML & CSS 展开你的网页设计之旅！"</blockquote>
+            <!--cite:引用标识的来源网址-->
+            <!--br:让句子中某处断行-->
+
+<!-- 给网页插入图片 -->
+
+    <!-- ① 左边项目栏里，再新建一个文件夹 images ,把图片放进去-->
+
+    <!--引用文件里的图片-->
+    <img src="images/咖啡馆.jpg" alt="近代时期欧洲咖啡馆"> <!--alt:当图片不显示时，会显示这里的文案-->
+
+
+<!--用CSS给页面元素添加样式-->
+
+    <h2 style="color:red">给我加上颜色</h2>   <!--【1、单独对页面内"某个元素"添加】颜色标签-->
+
+    <h3> 内容标题三</h3>
+
+
+
+
+    <nav> </nav>   <!--放置网站的主菜单 -->
+
+
+<!--网站主要内容 -->
+    <main> 
+
+    <!--包含多个主题内容，对不同主题内容做分类，形成不同内容区块 -->  <!-- 也有利于搜索引擎优化 -->
+        <section> 
+            <h2> 我是主要内容的标题三</h2>
+            <p> 新站SEO周期长，Google Ads预算1万元仅够获取约3000次点击 </p>
+
+        </section>
+
+        <section class="history">   <!-- class：对"section"打上分组标签，方便css做全局样式时，对指定section区块去做 -->
+            <blockquote> 咖啡豆贸易历史事件逻辑没有梳理 </blockquote>
+            <p> 当咖啡果从青绿色变成饱满的酒红色时，表示它已经成熟了； </p>
+            <p><a href="#"> 了解更多 </a></p>
+        </section>
+
+
+        <section class="shop"> 
+
+            <img src="images/咖啡馆.jpg" alt="咖啡馆">
+
+<!--div 划分或组织 html 的元素 --->
+            <div class="info"> 
+                <blockquote> 如果咖啡加工厂在农场上的话，成堆的废弃外果皮可以回收起来，做成肥料循环利用。</blockquote>
+                <p> 咖啡经过烘焙以后，体积会扩大两倍，但是由于水分烘干重量会轻15%~20%。</p>
+
+            </div>
+
+        </section>
+
+        <section class="product">
+            <div>
+                <img src="images/p1.png" alt="土司">
+                <h3>  巴黎风法国土司 </h3>
+                <p>  法国吐司是以鸡蛋<br>牛奶为主料制作的糕点名称。 </p>
+            </div>
+
+            <div>
+                <img src="images/p2.png" alt="面包">
+                <h3>  皇家奶油土司 </h3>
+                <p>  法国吐司是以鸡蛋<br>牛奶为主料制作的糕点名称。 </p>
+            </div>
+
+            <div>
+                <img src="images/p3.png" alt="面包">
+                <h3>  健康全麦土司 </h3>
+                <p>  法国吐司是以鸡蛋<br>牛奶为主料制作的糕点名称。 </p>
+            </div>
+        </section>
+
+
+        <section class="newsletter">
+            <p> 欢迎订阅咖啡工坊邮件 </p>
+<!-- 添加表单 -->
+            <form>
+                <input type="email" placeholder="请输入您的 Email" required>
+                <button type="submit">发送</button>
+            </form>
+            <!--
+                type="email",指定输入框类型为电子邮件
+                placeholder, 是输入框的提示文字
+                required , 表示这是一个必填字段
+
+                type="submit" 定义为提交按钮,点击后会提交表单中的数据
+            -->
+        </section>
+
+
+
+    </main>  
+
+    <footer> 网站声明 </footer>  <!--【页脚】标注网站版权声明等资讯 -->
+
+
+</body>
+
+</html>     <!-- 结束标签 #一般会自动生成 -->
+
+
+
+
+<!--统一对一个网站“所有页面”设定CSS样式-->
+
+    <!-- 
+    1、把CSS语言从该index.html中搬移出来，创建一个文件"style.css" 变成一个独立样式表；
+    2、把CSS语法设定，都写进那个表里；
+
+    -->
+
+
+
+<!-- CSS样式设置边距  -->
+
+    <!-- 
+    【1、重设页面边距 】
+    
+    *{
+     padding:0;
+     margin:0;  
+    }
+       -- padding:内边距
+       -- margin:外边距
+
+
+2--给整行内容块添加背景色
+header, section, footer {
+
+    background-color: blueviolet; 
+    border:5px salmon solid;   
+}
+    border: 边框粗细 颜色 线条样式 【solid：直线，dashed:虚线, dotted：圆点】
+
+
+    -->
+
+
+
+
+
